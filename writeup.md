@@ -3,7 +3,7 @@
 
 The goal of the project was to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
 
-The pipeline I used consist of the following steps:
+The pipeline used consist of the following steps:
 
 1. **Convert** the input rgb color image **to grayscale**
 2. Reduce image noise with a **gaussian filter**
