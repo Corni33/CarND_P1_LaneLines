@@ -1,23 +1,5 @@
-#**Finding Lane Lines on the Road** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
 **Finding Lane Lines on the Road**
 
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
----
 
 ### Reflection
 
@@ -28,6 +10,21 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
+
+
+The goal of the project is to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
+
+The pipeline I used goes as follows:
+
+1. Convert the input rgb color image to **grayscale**
+2. Reduce image noise with a **gaussian filter**
+3. Apply **canny edge detection** to the image
+4. Constrain the resulting binary edge image to a **region of interest** that outlines an area, where the lane markings will probably be
+5. Apply a **Hough transform** for detecting a set of straight lines
+6. **Extract left and right lane lines** from this set and draw them onto a blank canvas image
+7. **Overlay** the original color image with the detected lane lines  
+
+
 
 ![alt text][image1]
 
