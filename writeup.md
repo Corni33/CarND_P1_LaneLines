@@ -1,21 +1,9 @@
-**Finding Lane Lines on the Road**
 
+### Overview of the pipeline
 
-### Reflection
+The goal of the project was to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-
-The goal of the project is to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
-
-The pipeline I used goes as follows:
-
+The pipeline I used consist of the following steps:
 1. Convert the input rgb color image to **grayscale**
 2. Reduce image noise with a **gaussian filter**
 3. Apply **canny edge detection** to the image
@@ -24,12 +12,14 @@ The pipeline I used goes as follows:
 6. **Extract left and right lane lines** from this set and draw them onto a blank canvas image
 7. **Overlay** the original color image with the detected lane lines  
 
+In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() function:
+- Only straight lines with an absolute slope between 40 to 80 degrees relative to the x axis get processed further
+- Lines belonging to the left/right lane markings are distinguished by the sign of their slope value
+- The values for slope and position of the final left/right lane line are calculated as a weighted average over all processed lines (weight = length of a line)
+- Based on these averaged slope and position values, a single straight lane line gets drawn for the left and right lane respectively
 
 
-![alt text][image1]
-
-
-###2. Identify potential shortcomings with your current pipeline
+###2. Potential shortcomings of the pipeline
 
 
 One potential shortcoming would be what would happen when ... 
