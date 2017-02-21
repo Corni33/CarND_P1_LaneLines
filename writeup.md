@@ -4,7 +4,8 @@
 The goal of the project was to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
 
 The pipeline I used consist of the following steps:
-1. Convert the input rgb color image to **grayscale**
+
+1. **Convert** the input rgb color image **to grayscale**
 2. Reduce image noise with a **gaussian filter**
 3. Apply **canny edge detection** to the image
 4. Constrain the resulting binary edge image to a **region of interest** that outlines an area, where the lane markings will probably be
@@ -13,6 +14,7 @@ The pipeline I used consist of the following steps:
 7. **Overlay** the original color image with the detected lane lines  
 
 In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() function:
+
 - Only straight lines with an absolute slope between 40 to 80 degrees relative to the x axis get processed further
 - Lines belonging to the left/right lane markings are distinguished by the sign of their slope value
 - The values for slope and position of the final left/right lane line are calculated as a weighted average over all processed lines (weight = length of a line)
@@ -21,13 +23,16 @@ In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() fun
 
 ###2. Potential shortcomings of the pipeline
 
+A problem of the current pipeline is that lanes outside the hard coded region of interest never get detected. Therefore if the vehicle exhibits a significant yaw angle relative to the course of the lane (e.g. during a fast lane change) the detection of lanes may be impossible or wrong structures get detected as lanes.
 
-One potential shortcoming would be what would happen when ... 
+If the real lane is not a straight line, the current approach gives only a very rough estimate of the real course of the lane.
 
-Another shortcoming could be ...
+Another thing I noticed is when overlaying the lane lines onto a video, the result appears quite jittery and not very stable.
+
+It's hard to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes on the challenge video.
 
 
-###3. Suggest possible improvements to your pipeline
+###3. Possible improvements to the pipeline
 
 A possible improvement would be to ...
 
