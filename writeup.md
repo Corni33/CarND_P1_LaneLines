@@ -21,7 +21,7 @@ In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() fun
 - Based on these averaged slope and position values, a single straight lane line gets drawn for the left and right lane respectively
 
 
-###2. Potential shortcomings of the pipeline
+### Potential shortcomings of the pipeline
 
 A problem of the current pipeline is that lanes outside the hard coded region of interest never get detected. Therefore if the vehicle exhibits a significant yaw angle relative to the course of the lane (e.g. during a fast lane change) the detection of lanes may be impossible or wrong structures get detected as lanes.
 
@@ -32,7 +32,7 @@ Another thing I noticed while watching the videos is that the lane lines often a
 It's also a challenge to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes on the "challenge" video.
 
 
-###3. Possible improvements to the pipeline
+### Possible improvements to the pipeline
 
 To improve the stability of lane tracking in videos, the values for slope and position of a lane line could be filtered over time (e.g. lowpass filter).
 
