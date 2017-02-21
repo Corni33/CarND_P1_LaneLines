@@ -25,15 +25,19 @@ In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() fun
 
 A problem of the current pipeline is that lanes outside the hard coded region of interest never get detected. Therefore if the vehicle exhibits a significant yaw angle relative to the course of the lane (e.g. during a fast lane change) the detection of lanes may be impossible or wrong structures get detected as lanes.
 
-If the real lane is not a straight line, the current approach gives only a very rough estimate of the real course of the lane.
+While applying the pipeline to the "challenge" video, I noticed that if the real lane is not a straight line, the current approach gives only a very rough estimate of the real course of the lane.
 
-Another thing I noticed is when overlaying the lane lines onto a video, the result appears quite jittery and not very stable.
+Another thing I noticed while watching the videos is that the lane lines often appear jittery and not very stable.
 
-It's hard to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes on the challenge video.
+It's also a challenge to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes on the "challenge" video.
 
 
 ###3. Possible improvements to the pipeline
 
-A possible improvement would be to ...
+To improve the stability of lane tracking in videos, the values for slope and position of a lane line could be filtered over time (e.g. lowpass filter).
 
-Another potential improvement could be to ...
+For better representing the real course of the lane, a polynomial (e.g. parabola) could be used instead of a straight line. 
+
+If information about the movement of the vehicle is available, a possible improvement to the pipeline could also be to adapt the region of interest according to the rotation of the vehicle.
+
+
