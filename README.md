@@ -3,7 +3,7 @@
 
 ### Overview of the pipeline
 
-The goal of the project was to superimpose straight lines over the lane markings in an image of a road using basic image processing techniques.
+The goal of the project was to superimpose straight lines over lane markings in an image of a road using basic image processing techniques.
 
 The pipeline used consist of the following steps:
 
