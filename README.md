@@ -33,15 +33,15 @@ While applying the pipeline to the "challenge" video, I noticed that if the real
 
 Another thing I noticed while watching the videos is that the lane lines often appear jittery and not very stable.
 
-It's also a challenge to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes in the "challenge" video (see [extra.mp4](/extra.mp4)).
+It's also hard to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes in the "challenge" video (see [extra.mp4](/extra.mp4)).
 
 
 ### Possible improvements to the pipeline
 
-To improve the stability of lane tracking in videos, the values for slope and position of a lane line could be filtered over time (e.g. lowpass filter).
+To improve the stability of lane tracking in videos, the values for slope and position of a lane line could be filtered over time (e.g. with a lowpass filter).
 
 For better representing the real course of the lane, a polynomial (e.g. parabola) could be used instead of a straight line. 
 
-If information about the movement of the vehicle is available, a possible improvement to the pipeline could also be to adapt the region of interest according to the rotation of the vehicle.
+If information about the movement of the vehicle is available, a possible improvement to the pipeline could also be to adapt the region of interest according to the rotation of the ego vehicle.
 
 
