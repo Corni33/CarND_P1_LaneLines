@@ -33,7 +33,7 @@ While applying the pipeline to the "challenge" video, I noticed that if the real
 
 Another thing I noticed while watching the videos is that the lane lines often appear jittery and not very stable.
 
-It's also a challenge to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes in the "challenge" video (see [extra.mp4](../extra.mp4)).
+It's also a challenge to choose parameter values (e.g. for the canny edge detection or the Hough transform) that work in all lighting conditions. That's why the pipeline sometimes does not identify lanes in the "challenge" video (see [extra.mp4](/extra.mp4)).
 
 
 ### Possible improvements to the pipeline
