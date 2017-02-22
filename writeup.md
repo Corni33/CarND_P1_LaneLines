@@ -15,7 +15,7 @@ The pipeline used consist of the following steps:
 
 In order to realize steps 5 and 6 I adapted the pre-implemented draw_lines() function:
 
-- Only straight lines with an absolute slope between 40 to 80 degrees relative to the x axis get processed further
+- Only straight lines with an absolute slope between 20 to 80 degrees relative to the x axis get processed further
 - Lines belonging to the left/right lane markings are distinguished by the sign of their slope value
 - The values for slope and position of the final left/right lane line are calculated as a weighted average over all processed lines (weight = length of a line)
 - Based on these averaged slope and position values, a single straight lane line gets drawn for the left and right lane respectively
